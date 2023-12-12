@@ -1,0 +1,18 @@
+public class Masks {
+    public static void main(String[] args) {
+    Bity bity = new Bity();
+        System.out.println(bity.ustawBity0(15,2));
+    }
+}
+class Bity{
+   int  ustawBity0(int liczba, int nrUstawBitu){
+       int maska1=0;
+       int maska2= ~maska1;
+       int maska3= maska2 << 1;
+       int maska4= ~maska3;
+       int maska5 = maska4 << nrUstawBitu;
+       int maska6 = ~maska5;
+       int wyn = maska6 & liczba;
+       return wyn;
+   }
+}
