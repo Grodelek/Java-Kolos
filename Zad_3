@@ -1,4 +1,4 @@
-public class Masks {
+public class Zad3 {
     public static void main(String[] args) {
     Bity bity = new Bity();
         System.out.println(bity.ustawBity0(15,2));
@@ -16,3 +16,10 @@ class Bity{
        return wyn;
    }
 }
+
+
+/* Napisać klase Bity zawierającą metodę ustawBity0 o dwóch parametrach 
+typu int(liczba,nrUstawBitu) ustawiajacą wybrany bit w słowie binarnym na 0.
+W klasie publicznej Zad3a utworzyć obiekt klasy Bity i wywołać dla niego metodę ustawBity0 dla 
+przykładowych argumentów. W metodzie ustawBity0 tworzenie maski rozpocząć od wartości maska=0.
+Wydrukować *\
