@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class K1Zad2B {
+    public static void main(String[] args) {
+    int x=20;
+
+        System.out.println("Podaj na jakich pozycjach ma byc pierwsza 1:");
+         int n=wczytint();
+        System.out.println("Podaj na jakich pozycjach ma byc pierwsza 2:");
+
+        int m=wczytint();
+
+
+        System.out.println(utworzmaske(x,n,m));
+
+    }
+   static int utworzmaske(int number,int n,int m){
+
+        int maska1=0;
+        int maska2=~maska1;
+        int maska3=maska2<<1;
+        int maska4=~maska3;
+        int maska5= maska4<<n;
+        int maska6= maska4<<m;
+        int maska5b = maska5 | number;
+        int maska6b = maska6 | number;
+        return maska5b | maska6b;
+    }
+    static int wczytint() {
+        Scanner sc = new Scanner(System.in);
+        while (!sc.hasNextInt()) {
+            System.out.println("Blad formatu");
+            System.out.println("Podaj liczbe");
+            sc.next();
+        }
+        int num = sc.nextInt();
+        return num;
+    }
+}
