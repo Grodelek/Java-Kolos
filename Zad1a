@@ -1,0 +1,45 @@
+import java.util.Random;
+public class KopiowanieTablic {
+    public static void main(String[] args) {
+        int n = 6;
+        int m = 6;
+        int liczbaK = 5;
+        Random random = new Random();
+        int[][] x = new int[n][m];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                x[i][j] = random.nextInt(10)+1;
+            }
+        }
+
+        System.out.println("Oryginalna tablica x:");
+        wyswietlTablice(x);
+
+        int[][] tablicaSkopiowana = kopiujkol(x, n, m, liczbaK);
+
+        System.out.println("Skopiowana tablica:");
+        wyswietlTablice(tablicaSkopiowana);
+    }
+
+    static int[][] kopiujkol(int x[][], int n, int m, int liczbaK) {
+        int[][] tabshortK = new int[n][liczbaK];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < liczbaK; j++) {
+                tabshortK[i][j] = x[i][j];
+            }
+        }
+
+        return tabshortK;
+    }
+
+    static void wyswietlTablice(int x[][]) {
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x[i].length; j++) {
+                System.out.print(x[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
